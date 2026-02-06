@@ -1,4 +1,7 @@
 {
   "useTab": false,
-  "attachmentFolderPath": "/"
+  "attachmentFolderPath": "/",
+  "newFileLocation": "root",
+  "useMarkdownLinks": true,
+  "newLinkFormat": "relative"
 }
