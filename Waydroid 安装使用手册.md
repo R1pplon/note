@@ -174,6 +174,10 @@ sudo venv/bin/python3 main.py
 
 ![](assets/Waydroid%20安装使用手册/file-20260221211820075.png)
 
+## 真机伪装
+
+
+
 ## 代理抓包
 
 ### 证书安装
