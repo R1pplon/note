@@ -40,17 +40,17 @@ systemctl status waydroid-container
 
 初始化Waydroid可以选择**自动下载官方镜像**和**手动安装本地镜像**，
 
-自动初始化:
+### 自动初始化
 
-在终端里直接输入：sudo waydroid init 或直接在所有软件里，找到并打开waydroid。由于自动初始化下载太慢，所以不推荐用这种方法。
+由于自动初始化下载太慢，不推荐用这种方法
 
-  
-
-手动初始化:
+在终端里直接输入：`sudo waydroid init` 或直接在所有软件里，找到并打开waydroid。
 
   
 
-在下面这个网站里下载符合自己电脑情况的system和vendor文件(比如我的电脑处理器是x86架构，64位，我就选了名字里带x86_64的）：
+### 手动初始化
+
+下载符合自己电脑情况的system和vendor文件
 
   
 
