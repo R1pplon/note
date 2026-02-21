@@ -65,7 +65,7 @@ sudo waydroid init
 1. **system.img**
 2. **vendor.img**
 
-然后进行以下几步
+将文件放到 `/usr/share/waydroid-extra/images/` 目录下
 
 ```sh
 # 停止Waydroid服务
