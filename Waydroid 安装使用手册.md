@@ -214,7 +214,9 @@ Chain PREROUTING (policy ACCEPT 2254 packets, 479K bytes)
 
 ## Android Studio 开发
 
-adb连接后即可在
+adb连接后即可在 Device Manager 查看使用
+
+![](assets/Waydroid%20安装使用手册/file-20260222015611254.png)
 
 ## 参考
 
