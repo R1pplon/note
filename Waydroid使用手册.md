@@ -67,34 +67,16 @@ systemctl status waydroid-container
 ```sh
 # 停止Waydroid服务
 sudo systemctl stop waydroid-container
-```
 
-复制本地镜像
-
-  
-
-复制前先执行:
-
-  
-
-```text
+# 创建目录
 sudo mkdir -p /usr/share/waydroid-extra/images/
-```
 
-  
-
-然后再复制img文件：
-
-  
-
-```text
+# 复制本地镜像
 sudo cp /path/to/your/system.img /usr/share/waydroid-extra/images/
 sudo cp /path/to/your/vendor.img /usr/share/waydroid-extra/images/
 ```
 
 /path/to/your/system.img和/path/to/your/vendor.img改为你的system.img和vendor.img的路径
-
-  
 
   
 
