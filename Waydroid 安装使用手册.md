@@ -49,9 +49,11 @@ systemctl status waydroid-container
 
 由于自动初始化下载太慢，不推荐用这种方法
 
-在终端里直接输入：`sudo waydroid init` 或直接在所有软件里，找到并打开waydroid。
+```sh
+sudo waydroid init
+```
 
-  
+或直接在所有软件里，找到并打开waydroid。
 
 ### 手动初始化
 
@@ -103,7 +105,7 @@ waydroid show-full-ui --display 1920x1080
 waydroid session stop
 sudo waydroid container stop
 ```
-  
+
 ## 安卓软件
 
 ```sh
