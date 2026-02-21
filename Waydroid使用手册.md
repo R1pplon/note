@@ -52,24 +52,24 @@ systemctl status waydroid-container
 
 下载符合自己电脑情况的两个文件
 
-1. system.img
-2. vendor.img
+
 
 [WayDroid - Browse /images at SourceForge.net](https://sourceforge.net/projects/waydroid/files/images/)
 
-下载完后解压得到这两个文件： system.img 和 vendor.img ，然后进行以下几步
+下载完后解压得到这两个文件： 
+1. **system.img**
+2. **vendor.img**
 
-1. 停止Waydroid服务
+然后进行以下几步
 
-  
+
 
 ```sh
+# 停止Waydroid服务
 sudo systemctl stop waydroid-container
 ```
 
-  
-
-2. 复制本地镜像
+复制本地镜像
 
   
 
