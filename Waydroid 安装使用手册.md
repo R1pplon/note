@@ -106,6 +106,27 @@ waydroid session stop
 sudo waydroid container stop
 ```
 
+## adb连接
+
+`waydroid status` 获取 IP 地址
+
+```sh
+waydroid status
+Session:	RUNNING
+Container:	RUNNING
+Vendor type:	MAINLINE
+IP address:	192.168.240.112
+Session user:	r1pple(1000)
+Wayland display:	wayland-0
+
+adb connect 192.168.240.112
+already connected to 192.168.240.112:5555
+
+adb devices 
+List of devices attached
+192.168.240.112:5555	device
+```
+
 ## 安卓软件
 
 ```sh
@@ -189,3 +210,7 @@ Chain PREROUTING (policy ACCEPT 2254 packets, 479K bytes)
  pkts bytes target     prot opt in     out     source               destination         
   236 14176 REDIRECT   tcp  --  waydroid0 *       0.0.0.0/0            0.0.0.0/0            redir ports 8080
 ```
+
+## Android Studio 开发
+
+敬请期待
