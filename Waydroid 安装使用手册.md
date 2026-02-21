@@ -167,3 +167,15 @@ openssl x509 -inform DER -in cacert.der -out cacert.pem
 sudo venv/bin/python3 main.py install mitm --ca-cert ./cacert.pem
 ```
 
+修改 burp suite 的 代理设置，
+
+```sh
+# 将来自 `waydroid0` 网卡的所有 TCP 流量重定向到 Burp 的 8080 端口
+sudo iptables -t nat -A PREROUTING -i waydroid0 -p tcp -j REDIRECT --to-ports 8080
+
+# **验证规则是否添加成功**
+sudo iptables -t nat -L -n -v
+Chain PREROUTING (policy ACCEPT 2254 packets, 479K bytes)
+ pkts bytes target     prot opt in     out     source               destination         
+  236 14176 REDIRECT   tcp  --  waydroid0 *       0.0.0.0/0            0.0.0.0/0            redir ports 8080
+```
