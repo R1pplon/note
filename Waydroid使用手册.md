@@ -15,6 +15,7 @@ echo  $XDG_SESSION_TYPE
 ## 安装Waydroid
 
 ```sh
+# 安装依赖
 sudo apt update
 sudo apt install curl ca-certificates -y
 
@@ -23,5 +24,15 @@ curl -s https://repo.waydro.id | sudo bash
 
 # 安装waydroid
 sudo apt install waydroid -y
-
 ```
+
+验证安装
+
+```sh
+# 检查Waydroid版本
+waydroid --version
+
+# 检查服务状态
+systemctl status waydroid-container
+```
+
