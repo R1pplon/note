@@ -214,7 +214,7 @@ Chain PREROUTING (policy ACCEPT 2254 packets, 479K bytes)
 
 ## Android Studio 开发
 
-敬请期待
+adb连接后即可在
 
 ## 参考
 
