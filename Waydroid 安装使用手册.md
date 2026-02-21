@@ -157,7 +157,7 @@ sudo venv/bin/python3 main.py
 
 ## 代理抓包
 
-### 导出证书
+### 证书安装
 
 从 BurpSuite 导出证书 `cacert.der`
 
@@ -167,6 +167,7 @@ openssl x509 -inform DER -in cacert.der -out cacert.pem
 
 # ## 安装自签名的CA证书
 sudo venv/bin/python3 main.py install mitm --ca-cert ./cacert.pem
+INFO: Creating directory: /var/lib/waydroid/overlay/system/etc/security/cacerts INFO: Copying /home/r1pple/下载/cacert.pem to system trust store INFO: Target file: /var/lib/waydroid/overlay/system/etc/security/cacerts/9a5ba575.0 INFO: mitm installation finished
 ```
 
 ### burp suite 设置透明代理
