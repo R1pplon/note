@@ -72,16 +72,10 @@ sudo systemctl stop waydroid-container
 sudo mkdir -p /usr/share/waydroid-extra/images/
 
 # 复制本地镜像
+# /path/to/your/xxx改为正确文件路径
 sudo cp /path/to/your/system.img /usr/share/waydroid-extra/images/
 sudo cp /path/to/your/vendor.img /usr/share/waydroid-extra/images/
-```
 
-/path/to/your/system.img和/path/to/your/vendor.img改为你的system.img和vendor.img的路径
-
-  
-
-强制初始化
-
-```text
+# 强制初始化
 sudo waydroid init -f
 ```
