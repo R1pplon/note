@@ -4,10 +4,9 @@ Waydroid对系统环境有两个要求，安装前需要提前检查一下：
 
 1. **内核模块支持**
     系统需加载 **binder_linux** 和 **ashmem_linux** 内核模块
-    Ubuntu 22.04+版本默认包含这两个模块
+
 2. **Wayland桌面环境**
     Waydroid仅支持**Wayland**，不兼容X11
-    Ubuntu登录时可切换GNOME on Wayland
 
 检查方法：
 
@@ -53,17 +52,16 @@ systemctl status waydroid-container
 sudo waydroid init
 ```
 
-或直接在所有软件里，找到并打开waydroid。
+或直接在桌面找到并打开 waydroid
 
 ### 手动初始化
 
-下载符合自己电脑情况的两个文件
+自行下载文件，注意架构
 
-[WayDroid - Browse /images at SourceForge.net](https://sourceforge.net/projects/waydroid/files/images/)
-
-下载完后解压得到这两个文件： 
 1. **system.img**
 2. **vendor.img**
+
+[WayDroid - Browse /images at SourceForge.net](https://sourceforge.net/projects/waydroid/files/images/)
 
 将文件放到 `/usr/share/waydroid-extra/images/` 目录下
 
@@ -194,7 +192,10 @@ INFO: Creating directory: /var/lib/waydroid/overlay/system/etc/security/cacerts 
 ### burp suite 设置透明代理
 
 burp suite 的 代理设置，修改监听器
-**勾选 Support invisible proxying** 
+
+- 监听 `0.0.0.0` 或特定 IP
+- **勾选 Support invisible proxying** 
+
 ![](assets/Waydroid%20安装使用手册/file-20260222010415555.png)
 
 ### 配置 iptables 透明代理规则
