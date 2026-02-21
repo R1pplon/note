@@ -50,8 +50,10 @@ systemctl status waydroid-container
 
 ### 手动初始化
 
-下载符合自己电脑情况的system和vendor文件
+下载符合自己电脑情况的两个文件
 
+1. system
+2. vendor
   
 
 [https://sourceforge.net/projects/waydroid/files/images/](https://link.zhihu.com/?target=https%3A//sourceforge.net/projects/waydroid/files/images/)
