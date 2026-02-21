@@ -56,7 +56,7 @@ systemctl status waydroid-container
 2. vendor
   
 
-[https://sourceforge.net/projects/waydroid/files/images/](https://link.zhihu.com/?target=https%3A//sourceforge.net/projects/waydroid/files/images/)
+[WayDroid - Browse /images at SourceForge.net](https://sourceforge.net/projects/waydroid/files/images/)
 
   
 
