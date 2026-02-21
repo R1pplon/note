@@ -58,17 +58,13 @@ systemctl status waydroid-container
 
 [WayDroid - Browse /images at SourceForge.net](https://sourceforge.net/projects/waydroid/files/images/)
 
-  
-
 下载完后解压得到这两个文件： system.img 和 vendor.img ，然后进行以下几步
-
-  
 
 1. 停止Waydroid服务
 
   
 
-```text
+```sh
 sudo systemctl stop waydroid-container
 ```
 
