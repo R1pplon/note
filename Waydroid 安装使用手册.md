@@ -131,7 +131,13 @@ venv/bin/pip install -r requirements.txt
 
 # 执行waydroid_scrip脚本
 sudo venv/bin/python3 main.py
+```
 
+选择安卓版本和应用
+在安卓内查看系统信息
+![](assets/Waydroid%20安装使用手册/file-20260221211820075.png)
+
+```sh
 # 设置多窗口模式
 waydroid prop set persist.waydroid.multi_windows true
 
