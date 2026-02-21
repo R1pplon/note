@@ -157,6 +157,8 @@ sudo venv/bin/python3 main.py
 
 ## 代理抓包
 
+### 导出证书
+
 从 BurpSuite 导出证书 `cacert.der`
 
 ```sh
@@ -167,9 +169,13 @@ openssl x509 -inform DER -in cacert.der -out cacert.pem
 sudo venv/bin/python3 main.py install mitm --ca-cert ./cacert.pem
 ```
 
+### burp suite 设置透明代理
+
 burp suite 的 代理设置，修改监听器
 **勾选 Support invisible proxying** 
 ![](assets/Waydroid%20安装使用手册/file-20260222010415555.png)
+
+### 
 
 将来自 `waydroid0` 网卡的所有 TCP 流量重定向到 Burp 的 8080 端口
 
