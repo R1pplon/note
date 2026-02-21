@@ -150,9 +150,20 @@ sudo venv/bin/python3 main.py
 选择安卓版本和应用
 在安卓内查看系统信息
 应用推荐选择
-- `magisk` 面具
+- `magisk` 面具 获取root权限
 - `libhoudini` Arm转译
 
 ![](assets/Waydroid%20安装使用手册/file-20260221211820075.png)
 
 ## 代理抓包
+
+从 BurpSuite 导出证书 `cacert.der`
+
+```sh
+# 转换为 PEM（Android 需要 PEM 格式）
+openssl x509 -inform DER -in cacert.der -out cacert.pem
+
+# ## 安装自签名的CA证书
+sudo venv/bin/python3 main.py install mitm --ca-cert ./cacert.pem
+```
+
