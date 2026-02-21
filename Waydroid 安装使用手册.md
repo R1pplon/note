@@ -175,7 +175,7 @@ burp suite 的 代理设置，修改监听器
 **勾选 Support invisible proxying** 
 ![](assets/Waydroid%20安装使用手册/file-20260222010415555.png)
 
-### 
+### 配置 iptables 透明代理规则
 
 将来自 `waydroid0` 网卡的所有 TCP 流量重定向到 Burp 的 8080 端口
 
