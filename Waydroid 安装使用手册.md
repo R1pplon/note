@@ -82,3 +82,41 @@ sudo waydroid init -f
 ```
 
 ## 启动Waydroid
+
+```sh
+# 启动容器服务
+sudo systemctl start waydroid-container
+
+# 打开Android界面
+# 使用全屏模式
+waydroid show-full-ui
+
+```
+
+  
+
+2. 打开Android界面
+
+  
+
+使用全屏模式:
+
+  
+
+```text
+waydroid show-full-ui  
+```
+
+  
+
+或自定义屏幕分辨率也可以
+
+  
+
+例如：
+
+  
+
+```text
+waydroid show-full-ui --display 1920x1080 
+```
