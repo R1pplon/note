@@ -1,5 +1,3 @@
-# 使用Waydroid作为抓包测试环境
-
 **本文环境：**
 
 - 系统：`Arch Linux 6.8.2-zen2-1-zen`
