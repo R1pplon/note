@@ -98,5 +98,16 @@ waydroid show-full-ui --display 1920x1080
 ```
 
   
-## 运行安卓软件
+## 安卓软件
 
+```sh
+# 安装
+waydroid app install xxx.apk 
+```
+
+## 关闭waydroid
+
+```sh
+waydroid session stop
+sudo waydroid container stop
+```
