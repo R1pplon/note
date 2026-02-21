@@ -135,6 +135,9 @@ sudo venv/bin/python3 main.py
 
 选择安卓版本和应用
 在安卓内查看系统信息
+应用推荐选择
+- `magisk` 面具
+- `libhoudini` Arm转译
 ![](assets/Waydroid%20安装使用手册/file-20260221211820075.png)
 
 ```sh
