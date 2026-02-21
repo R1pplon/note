@@ -52,9 +52,8 @@ systemctl status waydroid-container
 
 下载符合自己电脑情况的两个文件
 
-1. system
-2. vendor
-  
+1. system.img
+2. vendor.img
 
 [WayDroid - Browse /images at SourceForge.net](https://sourceforge.net/projects/waydroid/files/images/)
 
