@@ -36,3 +36,73 @@ waydroid --version
 systemctl status waydroid-container
 ```
 
+## 初始化Waydroid
+
+初始化Waydroid可以选择**自动下载官方镜像**和**手动安装本地镜像**，
+
+自动初始化:
+
+在终端里直接输入：sudo waydroid init 或直接在所有软件里，找到并打开waydroid。由于自动初始化下载太慢，所以不推荐用这种方法。
+
+  
+
+手动初始化:
+
+  
+
+在下面这个网站里下载符合自己电脑情况的system和vendor文件(比如我的电脑处理器是x86架构，64位，我就选了名字里带x86_64的）：
+
+  
+
+[https://sourceforge.net/projects/waydroid/files/images/](https://link.zhihu.com/?target=https%3A//sourceforge.net/projects/waydroid/files/images/)
+
+  
+
+下载完后解压得到这两个文件： system.img 和 vendor.img ，然后进行以下几步
+
+  
+
+1. 停止Waydroid服务
+
+  
+
+```text
+sudo systemctl stop waydroid-container
+```
+
+  
+
+2. 复制本地镜像
+
+  
+
+复制前先执行:
+
+  
+
+```text
+sudo mkdir -p /usr/share/waydroid-extra/images/
+```
+
+  
+
+然后再复制img文件：
+
+  
+
+```text
+sudo cp /path/to/your/system.img /usr/share/waydroid-extra/images/
+sudo cp /path/to/your/vendor.img /usr/share/waydroid-extra/images/
+```
+
+/path/to/your/system.img和/path/to/your/vendor.img改为你的system.img和vendor.img的路径
+
+  
+
+  
+
+强制初始化
+
+```text
+sudo waydroid init -f
+```
