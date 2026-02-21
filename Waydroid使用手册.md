@@ -6,8 +6,22 @@ Waydroid对系统环境有两个要求，安装前需要提前检查一下：
 
 检查方法：
 
-```bash
+```sh
 lsmod | grep binder
 
 echo  $XDG_SESSION_TYPE
+```
+
+## 安装Waydroid
+
+```sh
+sudo apt update
+sudo apt install curl ca-certificates -y
+
+# 添加官方源
+curl -s https://repo.waydro.id | sudo bash
+
+# 安装waydroid
+sudo apt install waydroid -y
+
 ```
