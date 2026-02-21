@@ -116,6 +116,20 @@ waydroid app install xxx.apk
 ## 扩展
 
 ```sh
+# 设置多窗口模式
+waydroid prop set persist.waydroid.multi_windows true
+
+# 为应用添加触屏模拟
+waydroid prop set persist.waydroid.fake_touch com.hypergryph.arknights
+
+# 避免在窗口上出现多个鼠标指针
+waydroid prop set persist.waydroid.cursor_on_subsurface true
+
+# 设置共享文件夹为/Download文件夹（可自行修改文件夹路径）
+sudo mount --bind ~/下载 ~/.local/share/waydroid/data/media/0/Download
+```
+
+```sh
 sudo apt install lzip sqlite3
 
 # 克隆waydroid_script仓库
@@ -138,18 +152,6 @@ sudo venv/bin/python3 main.py
 应用推荐选择
 - `magisk` 面具
 - `libhoudini` Arm转译
+
 ![](assets/Waydroid%20安装使用手册/file-20260221211820075.png)
 
-```sh
-# 设置多窗口模式
-waydroid prop set persist.waydroid.multi_windows true
-
-# 为应用添加触屏模拟
-waydroid prop set persist.waydroid.fake_touch com.hypergryph.arknights
-
-# 避免在窗口上出现多个鼠标指针
-waydroid prop set persist.waydroid.cursor_on_subsurface true
-
-# 设置共享文件夹为/Download文件夹（可自行修改文件夹路径）
-sudo mount --bind ~/下载 ~/.local/share/waydroid/data/media/0/Download
-```
