@@ -215,3 +215,10 @@ Chain PREROUTING (policy ACCEPT 2254 packets, 479K bytes)
 ## Android Studio 开发
 
 敬请期待
+
+## 参考
+
+[Waydroid](https://docs.waydro.id/)
+[Waydroid - ArchWiki](https://wiki.archlinuxcn.org/zh-cn/Waydroid)
+[在PC上满速运行Android应用，WayDroid安装使用指南](https://www.bilibili.com/video/BV18z421B7YB)
+[使用Waydroid作为抓包测试环境 - MyLog - 我的经验与记录](https://brc.cool/linux/Android/%E4%BD%BF%E7%94%A8Waydroid%E4%BD%9C%E4%B8%BA%E6%8A%93%E5%8C%85%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83.html#%E4%BD%BF%E7%94%A8waydroid%E4%BD%9C%E4%B8%BA%E6%8A%93%E5%8C%85%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83)
