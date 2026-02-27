@@ -245,6 +245,12 @@ sudo iptables -t nat -L PREROUTING --line-numbers
 sudo iptables -t nat -D PREROUTING 1
 ```
 
+#### 修改规则
+
+在已设置规则的情况下，`iptables` 的规则不支持直接“编辑”。
+如果需要修改端口（例如从 Burp 的 8080 改为 Charles 的 8888，或自定义端口）
+标准的做法是 **先删除旧规则，再添加新规则**。
+
 ## Android Studio 开发
 
 adb连接后即可在 Device Manager 查看使用
