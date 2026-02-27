@@ -132,6 +132,16 @@ List of devices attached
 waydroid app install xxx.apk 
 ```
 
+## 使用体验
+
+### 禁用屏幕键盘
+
+打字时停止弹出屏幕键盘
+
+Waydroid 默认在选择输入字段时会显示 Android 虚拟键盘。
+要禁用该功能并只使用实体键盘，请关闭以下设置：
+`Settings > System > Languages & input > Physical keyboard > Use on-screen keyboard`
+
 ## 扩展
 
 ```sh
