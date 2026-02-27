@@ -220,6 +220,31 @@ Chain PREROUTING (policy ACCEPT 2254 packets, 479K bytes)
   236 14176 REDIRECT   tcp  --  waydroid0 *       0.0.0.0/0            0.0.0.0/0            redir ports 8080
 ```
 
+#### ### 撤销/删除规则
+
+当你不再需要抓包，或者想要恢复正常网络连接时，必须删除这条重定向规则。
+有两种删除方式，推荐使用“按规则匹配删除”。
+
+##### 按规则内容删除
+
+推荐，更安全
+将添加命令中的 `-A` 改为 `-D`，其他参数保持完全一致（包括旧端口号）：
+
+```sh
+sudo iptables -t nat -D PREROUTING -i waydroid0 -p tcp -j REDIRECT --to-ports 8080
+```
+
+##### 按行号删除
+
+如果不清楚具体参数，可以先查看行号
+
+```sh
+sudo iptables -t nat -L PREROUTING --line-numbers
+
+# 假设输出显示该规则在第 1 行
+sudo iptables -t nat -D PREROUTING 1
+```
+
 ## Android Studio 开发
 
 adb连接后即可在 Device Manager 查看使用
