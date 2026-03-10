@@ -68,7 +68,7 @@ The authenticity of host 'github.com (IP 地址)' can't be established.
 输入 `yes` 继续，如果一切正常，你会看到如下信息：
 
 ```text
-Hi username! You've successfully authenticated, but GitHub does not provide shell access.
+Hi <username>! You've successfully authenticated, but GitHub does not provide shell access.
 ```
 
 ---
