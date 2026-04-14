@@ -79,6 +79,9 @@ wsl --user <Username>
 
 # 更改分发版的默认用户
 <发行版名称> config --default-user <Username>
+
+# 关机,立即终止所有
+wsl --shutdown
 ```
 
 ## 导出分发
