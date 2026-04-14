@@ -32,4 +32,7 @@ wsl -l -o
 wsl --install -d <NAME>
 # 不指定的话，默认装 Ubuntu
 wsl --install
+
+# `--location` 指定安装目录
+wsl --install -d Ubuntu-24.04 --location D:\WSL\Ubuntu-24.04
 ```
