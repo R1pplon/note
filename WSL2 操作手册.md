@@ -1,3 +1,5 @@
+[Windows Subsystem for Linux 文档 | Microsoft Learn](https://learn.microsoft.com/zh-cn/windows/wsl/)
+
 安装不再赘述
 
 ## 确认当前状态
