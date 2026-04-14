@@ -74,8 +74,17 @@ wsl -t <发行版名称>
 # 以特定用户身份运行
 wsl --user <Username>
 
-## 更改分发版的默认用户
+# 更改分发版的默认用户
 <发行版名称> config --default-user <Username>
 ```
 
 ## 导入导出
+
+```PowerShell
+# 确保已关闭
+wsl --shutdown
+
+# 导出(默认为 tar 格式)
+wsl --export <发行版名称> D:\WSL2\backup\ubuntu-24.04.tar
+# 也可用 `--vhd` 导出为 `.vhdx`
+```
