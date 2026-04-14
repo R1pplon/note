@@ -92,7 +92,10 @@ wsl --export <发行版名称> D:\WSL2\backup\ubuntu-24.04.tar
 ## 导入发行版
 
 ```PowerShell
-wsl --import <Distribution Name> <InstallLocation> <FileName>
+wsl --import <发行版名称> <InstallLocation> <FileName>
+
+# 示例
+wsl --import Ubuntu-24.04 D:\WSL2\Ubuntu-24.04 D:\WSL2\backup\ubuntu-24.04.tar --version 2
 ```
 - `--vhd`：指定导入分发应为 .vhdx 文件而不是 tar 文件（仅使用 WSL 2 支持）
 - `--version <1/2>`：指定是否将分发导入为 WSL 1 还是 WSL 2
