@@ -2,20 +2,6 @@
 
 安装不再赘述
 
-## 设置 WSL 版本
-
-
-```PowerShell
-wsl --set-version <distribution name> <versionNumber>
-```
-
-若要指定 Linux 发行版运行的 WSL 版本（1 或 2），请将 `<distribution name>` 替换为发行版的名称，并将 `<versionNumber>` 替换为 1 或 2。
-
-```PowerShell
-# 设置默认 WSL 版本为 2
-wsl --set-default-version 2
-```
-
 ## 确认当前状态
 
 ```PowerShell
@@ -33,6 +19,9 @@ wsl -l --running
 
 # 只看名称（适合脚本用）
 wsl -l -q
+
+# 更新 WSL
+wsl --update
 ```
 
 ## 查找「可安装」的发行版
@@ -42,6 +31,20 @@ wsl -l -q
 wsl --list --online 
 # 简写
 wsl -l -o
+```
+
+## 设置 WSL 版本
+
+
+```PowerShell
+wsl --set-version <distribution name> <versionNumber>
+```
+
+若要指定 Linux 发行版运行的 WSL 版本（1 或 2），请将 `<distribution name>` 替换为发行版的名称，并将 `<versionNumber>` 替换为 1 或 2。
+
+```PowerShell
+# 设置默认 WSL 版本为 2
+wsl --set-default-version 2
 ```
 
 ## 安装发行版
@@ -99,3 +102,18 @@ wsl --import Ubuntu-24.04 D:\WSL2\Ubuntu-24.04 D:\WSL2\backup\ubuntu-24.04.tar -
 ```
 - `--vhd`：指定导入分发应为 .vhdx 文件而不是 tar 文件（仅使用 WSL 2 支持）
 - `--version <1/2>`：指定是否将分发导入为 WSL 1 还是 WSL 2
+## 注销和卸载
+
+```PowerShell
+wsl --unregister <发行版名称>
+```
+
+## 装载磁盘或设备
+
+```PowerShell
+# 装载磁盘
+wsl --mount <DiskPath>
+
+# 卸载磁盘
+wsl --unmount <DiskPath>
+```
