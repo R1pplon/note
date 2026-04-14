@@ -6,6 +6,9 @@
 查看wsl版本
 wsl -v # wsl --version
 
+wsl帮助
+wsl --help
+
 # 查看所有发行版、版本和状态
 wsl -l -v # 或 wsl --list --verbose
 
@@ -36,3 +39,5 @@ wsl --install
 # `--location` 指定安装目录
 wsl --install -d Ubuntu-24.04 --location D:\WSL\Ubuntu-24.04
 ```
+
+## 导入导出
