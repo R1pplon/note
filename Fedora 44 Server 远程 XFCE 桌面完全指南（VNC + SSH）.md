@@ -104,15 +104,15 @@ ssh -c aes128-gcm@openssh.com -L 5901:localhost:5901 r1pple@<服务器IP>
 *   输入之前 `vncpasswd` 设置的密码
 
 ## 第五阶段：画面与性能优化 (连接成功后操作)
-### 1. 解决色彩失真 (VNC 客户端设置)
-在 VNC 客户端的属性/设置中：
-*   **画质/色彩**：手动选择 **Full (24-bit / 32-bit)** 或 **RGB222**，不要选自动。
-### 2. 解决卡顿 (XFCE 桌面设置)
+
+### 解决卡顿 (XFCE 桌面设置)
+
 VNC 传输对特效极其敏感，进入 XFCE 桌面后务必做以下关闭：
 *   **关闭合成器(特效)**：终端运行 `xfwm4-tweaks-settings` -> **Compositor** 选项卡 -> **取消勾选 Enable display compositing**。
 *   **更换纯色壁纸**：右键桌面 -> Desktop Settings -> Background 改为 **Solid color** (纯黑或深灰)。
----
-## 💡 速查清单：日常工作流
+
+## 速查清单：日常工作流
+
 当你平时不需要桌面，只需 SSH 命令行时，服务器零额外资源消耗。
 当你需要远程桌面时，只需两步：
 1. [服务器] 启动服务：`sudo systemctl start vncserver@:1`
