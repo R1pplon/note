@@ -243,7 +243,7 @@ SELinux 文件上下文是应用于文件或目录的标签，用于定义其安
     
 4. **启动并启用 Apache Web 服务。**
     
-    修改配置后，你需要重新启动 `httpd` 服务。
+    修改配置后，你需要重新启动 `httpd` 服务以使更改生效。
     
     ```bash
     sudo systemctl restart httpd
@@ -255,7 +255,7 @@ SELinux 文件上下文是应用于文件或目录的标签，用于定义其安
     sudo systemctl status httpd
     ```
     
-    你应该看到 `httpd` 服务正在运行。
+    你应该看到 `httpd` 服务状态为 `active (running)`。
     
     ```plaintext
     ● httpd.service - The Apache HTTP Server
@@ -290,8 +290,7 @@ SELinux 文件上下文是应用于文件或目录的标签，用于定义其安
     curl http://localhost/index.html
     ```
     
-    网页状态码为 403
-    显示没有权限获取这个资源的信息   
+    即使你在前面的步骤中已经配置了文件系统权限并修改了 Apache 配置文件，你仍然会收到一个 **403 Forbidden** 错误。这表明访问被拒绝。
     
     ```plaintext
     <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
@@ -302,6 +301,8 @@ SELinux 文件上下文是应用于文件或目录的标签，用于定义其安
     <p>You don't have permission to access this resource.</p>
     </body></html>
     ```
+    **为什么会被拒绝？** 这正是 SELinux 在起作用。默认情况下，Apache 只被允许读取带有特定 SELinux 标签的文件。由于你的 `/custom` 目录不在默认的 Web 目录中，它没有正确的标签，因此 SELinux 阻止了 Apache 的读取操作。
+    
     
 6. **检查自定义目录的当前 SELinux 上下文。**
     
@@ -311,7 +312,7 @@ SELinux 文件上下文是应用于文件或目录的标签，用于定义其安
     ls -Zd /custom /custom/index.html
     ```
     
-    
+    你会注意到它们具有 `default_t` 上下文。在根目录下新创建的目录通常会获得这个通用标签，但这**不是** Apache Web 内容被允许访问的上下文。
     
     ```plaintext
     unconfined_u:object_r:default_t:s0 /custom
