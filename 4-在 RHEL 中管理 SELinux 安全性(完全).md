@@ -243,33 +243,43 @@ SELinux 文件上下文是应用于文件或目录的标签，用于定义其安
     
 4. **启动并启用 Apache Web 服务。**
     
-    修改配置后，你需要启动 `httpd` 服务。由于你在容器环境中，`systemctl` 不可用。你将直接启动 `httpd`。
+    修改配置后，你需要重新启动 `httpd` 服务。
     
     ```bash
-    sudo /usr/sbin/httpd -DFOREGROUND &
+    sudo systemctl restart httpd
     ```
     
-    `&` 符号在后台运行命令，允许你继续使用终端。你应该看到类似这样的输出，表明 Apache 正在启动。
-    
-    ```plaintext
-    [1] 5094
-    AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using fe80::216:3eff:fe00:63b%eth0. Set the 'ServerName' directive globally to suppress this message
-    ```
-    
-    **注意**：关于服务器完全限定域名（FQDN）的警告消息在此实验环境中是正常的，可以安全地忽略。
-    
-    要验证 Apache 是否正在运行，你可以检查 `httpd` 进程。
+    要验证 Apache 是否正在运行，你可以检查 `httpd` 服务状态。
     
     ```bash
-    ps aux | grep httpd
+    sudo systemctl status httpd
     ```
     
-    你应该看到几个 `httpd` 进程正在运行。
+    你应该看到 `httpd` 服务正在运行。
     
     ```plaintext
-    root        ... /usr/sbin/httpd -DFOREGROUND
-    apache      ... /usr/sbin/httpd -DFOREGROUND
-    ...output omitted...
+    ● httpd.service - The Apache HTTP Server
+         Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; preset: disabled)
+         Active: active (running) since Thu 2026-05-14 15:31:15 CST; 1min 12s ago
+     Invocation: 7bf50031cf1f4434932efbac2fe2e8ac
+           Docs: man:httpd.service(8)
+       Main PID: 3060 (httpd)
+         Status: "Total requests: 0; Idle/Busy workers 100/0;Requests/sec: 0; Bytes served/sec:   0 B/sec"
+          Tasks: 177 (limit: 22799)
+         Memory: 13.7M (peak: 13.9M)
+            CPU: 151ms
+         CGroup: /system.slice/httpd.service
+                 ├─3060 /usr/sbin/httpd -DFOREGROUND
+                 ├─3061 /usr/sbin/httpd -DFOREGROUND
+                 ├─3062 /usr/sbin/httpd -DFOREGROUND
+                 ├─3063 /usr/sbin/httpd -DFOREGROUND
+                 └─3064 /usr/sbin/httpd -DFOREGROUND
+    
+    May 14 15:31:15 localhost.localdomain systemd[1]: Starting httpd.service - The Apache HTTP Server...
+    May 14 15:31:15 localhost.localdomain (httpd)[3060]: httpd.service: Referenced but unset environment variable evaluates to an empty >
+    May 14 15:31:15 localhost.localdomain httpd[3060]: AH00558: httpd: Could not reliably determine the server's fully qualified domain >
+    May 14 15:31:15 localhost.localdomain httpd[3060]: Server configured, listening on: port 80
+    May 14 15:31:15 localhost.localdomain systemd[1]: Started httpd.service - The Apache HTTP Server.
     ```
     
 5. **尝试访问网页。**
@@ -280,10 +290,17 @@ SELinux 文件上下文是应用于文件或目录的标签，用于定义其安
     curl http://localhost/index.html
     ```
     
-    **注意**：在此特定环境中，你可能会发现即使使用 `root_t` 上下文，网页也可以访问。这表明虽然 SELinux 正在执行，但 `root_t` 上下文可能具有比预期更广泛的权限。但是，为了安全最佳实践和正确的 SELinux 配置，Web 内容仍应使用适当的 `httpd_sys_content_t` 上下文。
+    网页状态码为 403
+    显示没有权限获取这个资源的信息   
     
     ```plaintext
-    This is custom web content.
+    <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+    <html><head>
+    <title>403 Forbidden</title>
+    </head><body>
+    <h1>Forbidden</h1>
+    <p>You don't have permission to access this resource.</p>
+    </body></html>
     ```
     
 6. **检查自定义目录的当前 SELinux 上下文。**
@@ -294,11 +311,11 @@ SELinux 文件上下文是应用于文件或目录的标签，用于定义其安
     ls -Zd /custom /custom/index.html
     ```
     
-    你会注意到它们具有 `root_t` 上下文，这不是 Apache Web 内容的推荐上下文。
+    
     
     ```plaintext
-    system_u:object_r:root_t:s0 /custom
-    system_u:object_r:root_t:s0 /custom/index.html
+    unconfined_u:object_r:default_t:s0 /custom
+    unconfined_u:object_r:default_t:s0 /custom/index.html
     ```
     
     将其与默认的 Apache 文档根目录进行比较：
