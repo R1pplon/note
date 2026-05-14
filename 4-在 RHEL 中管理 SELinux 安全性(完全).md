@@ -365,8 +365,8 @@ SELinux 文件上下文是应用于文件或目录的标签，用于定义其安
     它们现在应该具有 `httpd_sys_content_t` 上下文。
     
     ```plaintext
-    system_u:object_r:httpd_sys_content_t:s0 /custom
-    system_u:object_r:httpd_sys_content_t:s0 /custom/index.html
+    unconfined_u:object_r:httpd_sys_content_t:s0 /custom 
+    unconfined_u:object_r:httpd_sys_content_t:s0 /custom/index.html
     ```
     
 9. **再次访问网页。**
@@ -386,19 +386,39 @@ SELinux 文件上下文是应用于文件或目录的标签，用于定义其安
     最后，停止 Apache HTTP 服务器进程。
     
     ```bash
-    sudo pkill httpd
+    sudo systemctl stop httpd
     ```
     
-    验证没有 `httpd` 进程正在运行。
+    验证 `httpd` 服务停止运行。
     
     ```bash
-    ps aux | grep httpd
+    systemctl status httpd
     ```
     
-    你应该只看到 `grep` 进程本身。
+    你应该看到 `inactive (dead)` 。
     
     ```plaintext
-    labex     ... grep httpd
+    ○ httpd.service - The Apache HTTP Server
+         Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; preset: disabled)
+         Active: inactive (dead) since Thu 2026-05-14 15:52:10 CST; 9s ago
+       Duration: 20min 53.402s
+     Invocation: 7bf50031cf1f4434932efbac2fe2e8ac
+           Docs: man:httpd.service(8)
+        Process: 3060 ExecStart=/usr/sbin/httpd $OPTIONS -DFOREGROUND (code=exited, status=0/SUCCESS)
+       Main PID: 3060 (code=exited, status=0/SUCCESS)
+         Status: "Total requests: 2; Idle/Busy workers 100/0;Requests/sec: 0.0016; Bytes served/sec:   0 B/sec"
+       Mem peak: 14.4M
+            CPU: 1.250s
+    
+    May 14 15:31:15 localhost.localdomain systemd[1]: Starting httpd.service - The Apache HTTP Server...
+    May 14 15:31:15 localhost.localdomain (httpd)[3060]: httpd.service: Referenced but unset environment variable evaluates to an empty >
+    May 14 15:31:15 localhost.localdomain httpd[3060]: AH00558: httpd: Could not reliably determine the server's fully qualified domain >
+    May 14 15:31:15 localhost.localdomain httpd[3060]: Server configured, listening on: port 80
+    May 14 15:31:15 localhost.localdomain systemd[1]: Started httpd.service - The Apache HTTP Server.
+    May 14 15:52:09 localhost.localdomain systemd[1]: Stopping httpd.service - The Apache HTTP Server...
+    May 14 15:52:10 localhost.localdomain systemd[1]: httpd.service: Deactivated successfully.
+    May 14 15:52:10 localhost.localdomain systemd[1]: Stopped httpd.service - The Apache HTTP Server.
+    May 14 15:52:10 localhost.localdomain systemd[1]: httpd.service: Consumed 1.250s CPU time, 14.4M memory peak.
     ```
 
 ## 使用布尔值调整 SELinux 策略以管理用户主目录
