@@ -12,18 +12,18 @@
 ### 交互/脚本核心命令
 最实用的分区操作指令：
 
-| 命令 | 作用与示例 |
-| :--- | :--- |
-| `mklabel` | 创建新分区表（磁盘标签）。<br>例：`mklabel gpt` 或 `mklabel msdos` |
-| `mkpart` | 创建新分区。<br>例：`mkpart primary ext4 1MiB 100MiB` |
-| `name` | 命名分区（GPT需要）。<br>例：`name 1 '我的数据盘'` |
-| `print` | 显示当前设备的分区表。 |
-| `rm` | 删除分区。<br>例：`rm 1`（删除编号为1的分区） |
-| `resizepart` | 修改分区结束位置。<br>例：`resizepart 1 200MiB` |
-| `set` | 设置分区标志。<br>例：`set 1 boot on` |
-| `unit` | 设置默认单位。**推荐 `unit s`**（按扇区操作最精确）。 |
-| `rescue` | 恢复丢失的分区（需指定起止位置）。 |
-| `quit` | 退出交互模式。 |
+| 命令           | 作用与示例                                              |
+| :----------- | :------------------------------------------------- |
+| `mklabel`    | 创建新分区表（磁盘标签）。<br>例：`mklabel gpt` 或 `mklabel msdos` |
+| `mkpart`     | 创建新分区。<br>例：`mkpart primary ext4 1MiB 100MiB`      |
+| `name`       | 命名分区（GPT需要）。<br>例：`name 1 '我的数据盘'`                 |
+| `print`      | 显示当前设备的分区表。                                        |
+| `rm`         | 删除分区。<br>例：`rm 1`（删除编号为1的分区）                       |
+| `resizepart` | 修改分区结束位置。<br>例：`resizepart 1 200MiB`               |
+| `set`        | 设置分区标志。<br>例：`set 1 boot on`                       |
+| `unit`       | 设置默认单位。**推荐 `unit s`**（按扇区操作最精确）。                  |
+| `rescue`     | 恢复丢失的分区（需指定起止位置）。                                  |
+| `quit`       | 退出交互模式。                                            |
 
 ### 实操场景示例
 **1. 查看所有磁盘分区布局（安全）**
