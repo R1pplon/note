@@ -76,6 +76,19 @@ docker run -it --name ubuntu-interactive ubuntu /bin/bash
 
 - `-it`：以交互模式运行容器并分配一个伪终端（pseudo-TTY）
 
+### 进入交互式shell
+
+先创建一个能够在后台运行的ubuntu容器
+```bash
+docker run --name test-ubuntu -d ubuntu sleep infinity
+```
+- `sleep infinity` 让进程**无限期挂起**
+
+获取一个交互式 shell
+```bash
+docker exec -it test-ubuntu /bin/bash
+```
+
 ### 端口映射
 
 ```bash
