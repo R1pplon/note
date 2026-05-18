@@ -99,7 +99,11 @@ docker run -d -v /host/path:/container/path nginx
 
 ### 在容器与宿主机之间复制文件
 
+```bash
+docker cp /host/path/file nginx-detached:/usr/share/nginx/html/hello.html
 
+docker cp hello.html nginx-detached:/usr/share/nginx/html/hello.html
+```
 
 ### 环境变量
 
