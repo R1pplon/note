@@ -57,7 +57,7 @@ docker port <容器>
 docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 ```
 
-### 后台运行与命名
+### 后台运行
 
 ```bash
 docker run -d --name my-nginx nginx
@@ -65,6 +65,14 @@ docker run -d --name my-nginx nginx
 
 - `-d`：后台运行（detached mode）
 - `--name`：自定义容器名（未指定时自动生成）
+
+### 交互运行
+
+```bash
+docker run -it --name ubuntu-interactive ubuntu /bin/bash
+```
+
+- `-it`：以交互模式运行容器并分配一个伪终端（pseudo-TTY）
 
 ### 端口映射
 
