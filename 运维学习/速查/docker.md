@@ -97,6 +97,10 @@ docker run -d -v /host/path:/container/path nginx
   docker run -d -p 8081:80 -v ~/data:/usr/share/nginx/html nginx
   ```
 
+### 在容器与宿主机之间复制文件
+
+
+
 ### 环境变量
 
 ```bash
