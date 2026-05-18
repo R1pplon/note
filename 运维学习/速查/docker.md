@@ -96,16 +96,20 @@ docker run -d -v /host/path:/container/path nginx
   ```
 
 ### 环境变量
+
 ```bash
 docker run -d -e VAR1=value1 -e VAR2=value2 nginx
 ```
+
 - `-e` 可多次使用
 - 查看变量：`docker exec <容器> env | grep VAR`
 
 ### 资源限制
+
 ```bash
 docker run -d --memory 256m --cpus 0.5 nginx
 ```
+
 - `--memory`：内存限制（单位 m/g）
 - `--cpus`：CPU 核心数（0.5 表示半个核）
 - 查看限制：
