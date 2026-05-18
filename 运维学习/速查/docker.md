@@ -84,7 +84,6 @@ docker run -d -v /host/path:/container/path nginx
 - 示例：挂载自定义网页
 
   ```bash
-  echo "<h1>Hello</h1>" > ~/data/index.html
   docker run -d -p 8081:80 -v ~/data:/usr/share/nginx/html nginx
   ```
 
