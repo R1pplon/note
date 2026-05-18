@@ -38,9 +38,18 @@ docker restart <容器>
 ## docker run
 
 ```bash
-# 启动 Docker 容器时运行内部命令
+# 基本语法
 docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 ```
+
+### 后台运行与命名
+
+```bash
+docker run -d --name my-nginx nginx
+```
+
+- `-d`：后台运行（detached mode）
+- `--name`：自定义容器名（未指定时自动生成）
 
 ## Dockerfile
 
