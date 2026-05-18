@@ -45,6 +45,8 @@ docker exec <容器> <命令>
 
 # 查看容器日志
 docker logs <容器>
+docker logs -f <容器> 
+docker logs --tail 10 <容器>
 
 # 查看端口映射
 docker port <容器>
