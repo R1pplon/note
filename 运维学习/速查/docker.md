@@ -81,6 +81,16 @@ docker network disconnect <网络配置名称> <容器>
 
 ```
 
+## volume
+
+```bash
+docker volume ls
+docker volume create
+docker volume rm
+docker volume prune
+docker volume update
+```
+
 ## docker run
 
 ```bash
@@ -200,4 +210,3 @@ docker run -d -w /app nginx sh -c "mkdir -p /app && touch f.txt && nginx -g 'dae
 docker build
 ```
 
-## docker inspect
