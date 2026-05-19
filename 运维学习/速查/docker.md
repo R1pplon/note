@@ -58,8 +58,21 @@ docker port <容器>
 # 列出网络配置
 docker network ls
 
-docker network create <网络配置名称> --
+# 创建网络配置
+docker network create <网络配置名称> --driver <模式，默认bridge>
 
+# 删除网络配置
+docker network rm <网络配置名称>
+
+# 删除所有未使用的网络配置
+docker network prune
+
+# 配置已有容器
+docker network connect <网络配置名称> <容器>
+docker network disconnect <网络配置名称> <容器>
+
+# 查看信息
+# docker network inspect <网络配置名称>
 ```
 
 ## docker run
