@@ -112,7 +112,8 @@ docker exec my_container cat /app/data/test.txt
 ```
 
 你应该会看到控制台打印出 "Hello from Docker volume" 消息。
-## 在容器间共享数据Docker 数据卷的一大优势是能够在容器之间共享数据。让我们创建另一个使用相同卷的容器：
+## 在容器间共享数据
+Docker 数据卷的一大优势是能够在容器之间共享数据。让我们创建另一个使用相同卷的容器：
 
 ```bash
 docker run -d --name another_container -v my_data:/app/shared_data ubuntu:latest sleep infinity
