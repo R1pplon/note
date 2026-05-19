@@ -84,12 +84,23 @@ docker network disconnect <网络配置名称> <容器>
 ## volume
 
 ```bash
+# 列出数据卷
 docker volume ls
+
+# 创建数据卷
 docker volume create
-docker volume rm
+
+# 删除数据卷
+docker volume rm <数据卷>
+
+# 删除未使用的数据卷
 docker volume prune
+
+# 只能用于更新集群卷
 docker volume update
 ```
+
+
 
 ## docker run
 
