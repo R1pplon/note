@@ -93,7 +93,7 @@ docker volume create
 # 删除数据卷
 docker volume rm <数据卷>
 
-# 删除未使用的数据卷
+# 删除未使用的匿名数据卷
 docker volume prune
 
 # 只能用于更新集群卷
