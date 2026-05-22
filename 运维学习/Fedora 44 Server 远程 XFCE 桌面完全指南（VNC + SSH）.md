@@ -122,3 +122,13 @@ VNC 传输对特效极其敏感，进入 XFCE 桌面后务必做以下关闭：
 2. [本地电脑] 建隧道并连接：`ssh -L 5901:localhost:5901 r1pple@IP` -> VNC 客户端连 `localhost:5901`
 用完桌面后，关掉释放资源：
 3. [服务器] 关闭服务：`sudo systemctl stop vncserver@:1`
+
+当你需要本地桌面时：
+1. **临时从命令行启动图形界面**
+```bash
+sudo systemctl isolate graphical.target
+```
+2. **临时关闭图形界面，进入纯命令行**
+```bash
+sudo systemctl isolate multi-user.target
+```
