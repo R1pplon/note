@@ -124,8 +124,9 @@ kubeadm join 192.168.20.80:6443 --token 8xs5b2.ien5f4dnga01ryk9 \
 
 
 
-
 # 如果初始化的 token 不小心清空了，可以通过如下命令获取或者重新申请
+kubeadm token create --print-join-command
+
 # 如果 token 已经过期，就重新申请
 kubeadm token create
 
