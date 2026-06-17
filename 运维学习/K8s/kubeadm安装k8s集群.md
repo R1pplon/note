@@ -43,8 +43,10 @@ sysctl --system  # 生效
 
 
 # 时间同步
-yum install ntpdate -y
-ntpdate time.windows.com
+# yum install ntpdate -y
+# ntpdate time.windows.com
+dnf install chrony -y
+systemctl enable --now chronyd
 ```
 
 ### 安装docker
