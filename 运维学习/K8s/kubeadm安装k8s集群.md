@@ -46,3 +46,36 @@ sysctl --system  # 生效
 yum install ntpdate -y
 ntpdate time.windows.com
 ```
+
+## 安装docker
+
+skip
+
+## 添加阿里云yum源
+
+```bash
+cat > /etc/yum.repos.d/kubernetes.repo << EOF  
+[kubernetes]  
+name=Kubernetes  
+baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64  
+enabled=1  
+gpgcheck=0  
+repo_gpgcheck=0  
+  
+gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg  
+EOF
+```
+
+## 安装 kubeadm、kubelet、kubectl
+
+```bash
+yum install -y kubelet-1.23.6 kubeadm-1.23.6 kubectl-1.23.6 
+systemctl enable kubelet  
+
+# 配置关闭 Docker 的 cgroups，修改 /etc/docker/daemon.json，加入以下内容  
+"exec-opts": ["native.cgroupdriver=systemd"]  
+
+# 重启 docker  
+systemctl daemon-reload  
+systemctl restart docker
+```
