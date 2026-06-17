@@ -89,7 +89,48 @@ systemctl enable kubelet
 "exec-opts": ["native.cgroupdriver=systemd"]  
 
 # 重启 docker  
-systemctl daemon-reload  
+systemctl daemon-reload
 systemctl restart docker
 ```
 
+## 部署Master
+
+```bash
+# 在 Master 节点下执行  
+
+kubeadm init \  
+      --apiserver-advertise-address=192.168.113.120 \  
+      --image-repository registry.aliyuncs.com/google_containers \  
+      --kubernetes-version v1.23.6 \  
+      --service-cidr=10.96.0.0/12 \  
+      --pod-network-cidr=10.244.0.0/16  
+  
+# 安装成功后，复制如下配置并执行  
+mkdir -p $HOME/.kube  
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config  
+sudo chown $(id -u):$(id -g) $HOME/.kube/config  
+kubectl get nodes
+```
+
+## 加入 Kubernetes Node
+
+```bash
+分别在 k8s-node1 和 k8s-node2 执行  
+  
+# 下方命令可以在 k8s master 控制台初始化成功后复制 join 命令  
+  
+kubeadm join 192.168.113.120:6443 --token w34ha2.66if2c8nwmeat9o7 --discovery-token-ca-cert-hash sha256:20e2227554f8883811c01edd850f0cf2f396589d32b57b9984de3353a7389477
+
+  
+  
+# 如果初始化的 token 不小心清空了，可以通过如下命令获取或者重新申请  
+# 如果 token 已经过期，就重新申请  
+kubeadm token create  
+  
+# token 没有过期可以通过如下命令获取  
+kubeadm token list  
+  
+# 获取 --discovery-token-ca-cert-hash 值，得到值后需要在前面拼接上 sha256:  
+openssl x509 -pubkey -in /etc/kubernetes/pki/ca.crt | openssl rsa -pubin -outform der 2>/dev/null | \  
+openssl dgst -sha256 -hex | sed 's/^.* //'
+```
