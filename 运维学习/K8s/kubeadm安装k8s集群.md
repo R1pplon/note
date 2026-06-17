@@ -47,6 +47,17 @@ sysctl --system  # 生效
 # ntpdate time.windows.com
 dnf install chrony -y
 systemctl enable --now chronyd
+
+echo "pool ntp.aliyun.com iburst" >> /etc/chrony.conf
+echo "local stratum 10" >> /etc/chrony.conf
+
+# k8s-master
+echo "allow 192.168.20.0/24" >> /etc/chrony.conf
+
+# k8s-node
+echo "server 192.168.20.80 iburst" >> /etc/chrony.conf
+
+systemctl restart chronyd
 ```
 
 ### 安装docker
