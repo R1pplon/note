@@ -143,7 +143,7 @@ openssl dgst -sha256 -hex | sed 's/^.* //'
 # 在 master 节点上执行  
 # 下载 calico 配置文件，可能会网络超时  
 curl https://docs.projectcalico.org/manifests/calico.yaml -O
-wget https://raw.githubusercontent.com/projectcalico/calico/v3.25.0/manifests/calico.yaml
+# wget https://raw.githubusercontent.com/projectcalico/calico/v3.25.0/manifests/calico.yaml
 
 # 修改 calico.yaml 文件中的 CALICO_IPV4POOL_CIDR 配置，修改为与初始化的 cidr 相同
 
