@@ -141,8 +141,8 @@ openssl dgst -sha256 -hex | sed 's/^.* //'
 ## 部署 CNI网络插件
 
 ```bash
-# 在 master 节点上执行  
-# 下载 calico 配置文件，可能会网络超时  
+# 在 master 节点上执行
+# 下载 calico 配置文件，可能会网络超时
 curl https://docs.projectcalico.org/manifests/calico.yaml -O
 # wget https://raw.githubusercontent.com/projectcalico/calico/v3.25.0/manifests/calico.yaml
 
