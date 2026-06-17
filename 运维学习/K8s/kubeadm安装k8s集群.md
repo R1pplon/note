@@ -82,8 +82,8 @@ EOF
 ### 安装 kubeadm、kubelet、kubectl
 
 ```bash
-yum install -y kubelet-1.23.6 kubeadm-1.23.6 kubectl-1.23.6 
-systemctl enable kubelet  
+yum install -y kubelet-1.23.6 kubeadm-1.23.6 kubectl-1.23.6
+systemctl enable kubelet
 
 # 配置关闭 Docker 的 cgroups，修改 /etc/docker/daemon.json，加入以下内容  
 "exec-opts": ["native.cgroupdriver=systemd"]  
