@@ -136,3 +136,18 @@ kubeadm token list
 openssl x509 -pubkey -in /etc/kubernetes/pki/ca.crt | openssl rsa -pubin -outform der 2>/dev/null | \  
 openssl dgst -sha256 -hex | sed 's/^.* //'
 ```
+
+## 部署 CNI网络插件
+
+```bash
+# 在 master 节点上执行  
+# 下载 calico 配置文件，可能会网络超时  
+curl https://docs.projectcalico.org/manifests/calico.yaml -O  
+  
+# 修改 calico.yaml 文件中的 CALICO_IPV4POOL_CIDR 配置，修改为与初始化的 cidr 相同  
+  
+# 修改 IP_AUTODETECTION_METHOD 下的网卡名称  
+  
+# 删除镜像 [docker.io](http://docker.io)/ 前缀，避免下载过慢导致失败  
+sed -i 's#docker.io/##g' calico.yaml
+```
