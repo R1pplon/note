@@ -98,17 +98,17 @@ systemctl restart docker
 ```bash
 # 在 Master 节点下执行  
 
-kubeadm init \  
-      --apiserver-advertise-address=192.168.113.120 \  
-      --image-repository registry.aliyuncs.com/google_containers \  
-      --kubernetes-version v1.23.6 \  
-      --service-cidr=10.96.0.0/12 \  
-      --pod-network-cidr=10.244.0.0/16  
-  
+kubeadm init \
+      --apiserver-advertise-address=192.168.20.80 \
+      --image-repository registry.aliyuncs.com/google_containers \
+      --kubernetes-version v1.23.6 \
+      --service-cidr=10.96.0.0/12 \
+      --pod-network-cidr=10.244.0.0/16
+
 # 安装成功后，复制如下配置并执行  
-mkdir -p $HOME/.kube  
-sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config  
-sudo chown $(id -u):$(id -g) $HOME/.kube/config  
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
 kubectl get nodes
 ```
 
