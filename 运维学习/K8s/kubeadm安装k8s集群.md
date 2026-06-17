@@ -166,3 +166,15 @@ kubectl expose deployment nginx --port=80 --type=NodePort
 # 查看 pod 以及服务信息
 kubectl get pod,svc
 ```
+
+## 在任意节点使用 kubectl
+
+```
+# 1. 将 master 节点中 /etc/kubernetes/admin.conf 拷贝到需要运行的服务器的 /etc/kubernetes 目录中
+scp /etc/kubernetes/admin.conf root@k8s-node1:/etc/kubernetes
+
+# 2. 在对应的服务器上配置环境变量
+echo "export KUBECONFIG=/etc/kubernetes/admin.conf" >> ~/.bash_profile
+source ~/.bash_profile
+```
+
