@@ -47,11 +47,11 @@ yum install ntpdate -y
 ntpdate time.windows.com
 ```
 
-## 安装docker
+### 安装docker
 
 skip
 
-## 添加阿里云yum源
+### 添加阿里云yum源
 
 ```bash
 cat > /etc/yum.repos.d/kubernetes.repo << EOF  
@@ -66,7 +66,7 @@ gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors
 EOF
 ```
 
-## 安装 kubeadm、kubelet、kubectl
+### 安装 kubeadm、kubelet、kubectl
 
 ```bash
 yum install -y kubelet-1.23.6 kubeadm-1.23.6 kubectl-1.23.6 
@@ -79,3 +79,4 @@ systemctl enable kubelet
 systemctl daemon-reload  
 systemctl restart docker
 ```
+
