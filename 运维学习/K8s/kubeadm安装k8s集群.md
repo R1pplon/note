@@ -153,3 +153,16 @@ curl https://docs.projectcalico.org/manifests/calico.yaml -O
 # 删除镜像 [docker.io](http://docker.io)/ 前缀，避免下载过慢导致失败
 sed -i 's#docker.io/##g' calico.yaml
 ```
+
+## 测试
+
+```bash
+# 创建部署
+kubectl create deployment nginx --image=nginx
+
+# 暴露端口
+kubectl expose deployment nginx --port=80 --type=NodePort
+
+# 查看 pod 以及服务信息
+kubectl get pod,svc
+```
