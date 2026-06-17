@@ -2,9 +2,9 @@
 Docker: 20+
 K8s: 1.23.6
 
-k8s-master: 192.168.20.200
-k8s-node1: 192.168.20.201
-k8s-node2: 192.168.20.202
+k8s-master: 192.168.20.80
+k8s-node1: 192.168.20.81
+k8s-node2: 192.168.20.82
 
 ## 初始操作
 
@@ -27,9 +27,9 @@ hostnamectl set-hostname <hostname>
 
 # 在master添加hosts
 cat >> /etc/hosts << EOF
-192.168.20.200 k8s-master
-192.168.20.201 k8s-node1
-192.168.20.202 k8s-node2
+192.168.20.80 k8s-master
+192.168.20.81 k8s-node1
+192.168.20.82 k8s-node2
 EOF
 
 
