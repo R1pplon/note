@@ -119,7 +119,8 @@ kubectl get nodes
 
 # 下方命令可以在 k8s master 控制台初始化成功后复制 join 命令  
   
-kubeadm join 192.168.20.80:6443 --token 8xs5b2.ien5f4dnga01ryk9 \ --discovery-token-ca-cert-hash sha256:e79d50446c993d86c191ed37dc727a57e7f02b99e416457eadba9ba01d9c885d
+kubeadm join 192.168.20.80:6443 --token 8xs5b2.ien5f4dnga01ryk9 \
+--discovery-token-ca-cert-hash sha256:e79d50446c993d86c191ed37dc727a57e7f02b99e416457eadba9ba01d9c885d
 
 
 
