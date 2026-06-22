@@ -1,6 +1,68 @@
 [Windows Subsystem for Linux 文档 | Microsoft Learn](https://learn.microsoft.com/zh-cn/windows/wsl/)
 
-安装不再赘述
+## 安装
+
+**只安装 WSL，不安装任何发行版**
+
+```PowerShell
+wsl --install --no-distribution
+```
+
+不推荐直接使用 `wsl --install` 会默认下载安装Ubuntu，可修改的发行版很少
+
+```PowerShell
+# 未安装wsl时
+wsl --list --online
+以下是可安装的有效分发的列表。
+使默认分发用 “*” 表示。
+使用 'wsl --install -d <Distro>' 安装。
+
+  NAME                            FRIENDLY NAME
+* Ubuntu                          Ubuntu
+  Debian                          Debian GNU/Linux
+  kali-linux                      Kali Linux Rolling
+  OracleLinux_7_9                 Oracle Linux 7.9
+  OracleLinux_8_10                Oracle Linux 8.10
+  OracleLinux_9_5                 Oracle Linux 9.5
+  SUSE-Linux-Enterprise-15-SP6    SUSE Linux Enterprise 15 SP6
+  openSUSE-Tumbleweed             openSUSE Tumbleweed
+```
+
+重启后再进行安装发行版，有更多选择
+
+```PowerShell
+wsl --list --online
+以下是可安装的有效分发的列表。
+使用“wsl.exe --install <Distro>”安装。
+
+NAME                            FRIENDLY NAME
+Ubuntu                          Ubuntu
+Ubuntu-26.04                    Ubuntu 26.04 LTS
+Ubuntu-24.04                    Ubuntu 24.04 LTS
+Ubuntu-22.04                    Ubuntu 22.04 LTS
+openSUSE-Tumbleweed             openSUSE Tumbleweed
+openSUSE-Leap-16.0              openSUSE Leap 16.0
+SUSE-Linux-Enterprise-15-SP7    SUSE Linux Enterprise 15 SP7
+SUSE-Linux-Enterprise-16.0      SUSE Linux Enterprise 16.0
+kali-linux                      Kali Linux Rolling
+Debian                          Debian GNU/Linux
+AlmaLinux-8                     AlmaLinux OS 8
+AlmaLinux-9                     AlmaLinux OS 9
+AlmaLinux-Kitten-10             AlmaLinux OS Kitten 10
+AlmaLinux-10                    AlmaLinux OS 10
+archlinux                       Arch Linux
+FedoraLinux-44                  Fedora Linux 44
+FedoraLinux-43                  Fedora Linux 43
+eLxr                            eLxr 12.12.0.0 GNU/Linux
+OracleLinux_7_9                 Oracle Linux 7.9
+OracleLinux_8_10                Oracle Linux 8.10
+OracleLinux_9_5                 Oracle Linux 9.5
+SUSE-Linux-Enterprise-15-SP6    SUSE Linux Enterprise 15 SP6
+```
+
+```PowerShell
+wsl --install <Distro>
+```
 
 ## 确认当前状态
 
