@@ -28,7 +28,7 @@ wsl --list --online
   openSUSE-Tumbleweed             openSUSE Tumbleweed
 ```
 
-重启后再进行安装发行版，有更多选择
+重启完成wsl安装后再进行安装发行版，有更多选择
 
 ```PowerShell
 wsl --list --online
