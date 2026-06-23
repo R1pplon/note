@@ -8,6 +8,7 @@
 
 1. **winget 主程序及许可证**
    - 来源：[microsoft/winget-cli](https://github.com/microsoft/winget-cli)
+   - 当前稳定版本 [1.28.240](https://github.com/microsoft/winget-cli/releases/tag/v1.28.240)
    - 文件：
      - `Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle`
      - `e53e159d00e04f729cc2180cffd1c02e_License1.xml`
