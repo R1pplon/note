@@ -15,15 +15,15 @@
 2. **UI.Xaml 2.8 框架**
    - 来源：[NuGet](https://www.nuget.org/packages/Microsoft.UI.Xaml/) 下载 `.nupkg` 后改扩展名为 `.zip`，解压取出 `tools\AppX\x64\Release\` 目录下的文件。
    - 文件：`Microsoft.UI.Xaml.2.8.appx`
-   - 直链：
+   - 下载链接：
        - https://www.nuget.org/api/v2/package/Microsoft.UI.Xaml/2.8.7
 3. **VCLibs 框架 (x64)**
-   - 直链：
+   - 下载链接：
      - [Microsoft.VCLibs.140.00_14.0.33519.0_x64__8wekyb3d8bbwe.Appx](https://github.com/czvv/LTSC-Add-MicrosoftStore-2025/blob/main/Microsoft.VCLibs.140.00_14.0.33519.0_x64__8wekyb3d8bbwe.Appx)
      - [Microsoft.VCLibs.140.00.UWPDesktop_14.0.33728.0_x64__8wekyb3d8bbwe.Appx](https://github.com/czvv/LTSC-Add-MicrosoftStore-2025/blob/main/Microsoft.VCLibs.140.00.UWPDesktop_14.0.33728.0_x64__8wekyb3d8bbwe.Appx)
 4. **Windows App Runtime 1.8**
    - 来源：[Windows 应用 SDK 早期版本下载 - Windows apps | Microsoft Learn](https://learn.microsoft.com/zh-cn/windows/apps/windows-app-sdk/downloads-archive)  获取版本 **1.8.9 (1.8.260529003)**
-   - 直链：
+   - 下载链接：
        - [WindowsAppRuntimeInstall-x64.exe](https://aka.ms/windowsappsdk/1.8/1.8.260529003/windowsappruntimeinstall-x64.exe)
 
 ### 二、 执行安装命令
