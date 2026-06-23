@@ -40,7 +40,7 @@
 # 安装底层依赖框架
 Add-AppxPackage -Path "./Microsoft.UI.Xaml.2.8.appx"
 Add-AppxPackage -Path "./Microsoft.VCLibs.140.00_14.0.33519.0_x64__8wekyb3d8bbwe.Appx"
-Add-AppxPackage -Path "./Microsoft.VCLibs.140.00_14.0.33519.0_x64.appx"
+Add-AppxPackage -Path "./Microsoft.VCLibs.140.00.UWPDesktop_14.0.33728.0_x64__8wekyb3d8bbwe.Appx"
 
 # 安装 winget 主程序
 Add-AppxPackage -Path "./Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle"
