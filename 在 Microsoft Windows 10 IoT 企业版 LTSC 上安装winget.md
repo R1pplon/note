@@ -76,8 +76,9 @@ Add-AppxProvisionedPackage -Online -PackagePath "./Microsoft.DesktopAppInstaller
      - `Microsoft.VCLibs.140.00_14.0.33519.0_x64.appx`
      - `Microsoft.VCLibs.140.00.UWPDesktop_14.0.33728.0_x64.appx`
 4. **Windows App Runtime 1.8**
-  -    
-   - 直链：https://aka.ms/windowsappsdk/1.8/1.8.260529003/windowsappruntimeinstall-x64.exe
+   - 来源：[Windows 应用 SDK 早期版本下载 - Windows apps | Microsoft Learn](https://learn.microsoft.com/zh-cn/windows/apps/windows-app-sdk/downloads-archive)  获取版本 **1.8.9 (1.8.260529003)**
+   - 直链：
+       - https://aka.ms/windowsappsdk/1.8/1.8.260529003/windowsappruntimeinstall-x64.exe
    - 文件：`WindowsAppRuntimeInstall-x64.exe`
 ### 二、 执行安装命令
 在该文件夹下，**以管理员权限打开 PowerShell**，直接依次粘贴执行以下命令：
