@@ -1,7 +1,8 @@
 系统信息
 
-> OS 名称:          Microsoft Windows 10 IoT 企业版 LTSC
-> OS 版本:          10.0.19044 暂缺 Build 19044
+> Microsoft Windows 10 IoT 企业版 LTSC
+> 10.0.19044 暂缺 Build 19044
+> x64
 
 ### 一、 文件准备
 
