@@ -25,7 +25,13 @@ https://www.nuget.org/packages/Microsoft.UI.Xaml/
 得到
 - Microsoft.UI.Xaml.2.8.appx
 
+https://github.com/harryeffinpotter/PC-Gaming-Redists/raw/main/Microsoft.VCLibs.140.00_14.0.33519.0_x64.appx
+得到
+- Microsoft.VCLibs.140.00_14.0.33519.0_x64.appx
 
+https://github.com/harryeffinpotter/PC-Gaming-Redists/raw/main/Microsoft.VCLibs.140.00.UWPDesktop_14.0.33728.0_x64.appx
+得到
+- Microsoft.VCLibs.140.00.UWPDesktop_14.0.33728.0_x64.appx
 
 ## 安装命令
 
