@@ -19,6 +19,7 @@
 3. **VCLibs 框架 (x64)**
    - 直链：
      - https://github.com/harryeffinpotter/PC-Gaming-Redists/raw/main/Microsoft.VCLibs.140.00_14.0.33519.0_x64.appx
+     - https://github.com/czvv/LTSC-Add-MicrosoftStore-2025/blob/main/Microsoft.VCLibs.140.00_14.0.33519.0_x64__8wekyb3d8bbwe.Appx
      - https://github.com/harryeffinpotter/PC-Gaming-Redists/raw/main/Microsoft.VCLibs.140.00.UWPDesktop_14.0.33728.0_x64.appx
    - 文件：
      - `Microsoft.VCLibs.140.00_14.0.33519.0_x64.appx`
