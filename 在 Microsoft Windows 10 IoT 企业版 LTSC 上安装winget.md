@@ -83,11 +83,16 @@ Add-AppxProvisionedPackage -Online -PackagePath "./Microsoft.DesktopAppInstaller
 ### 二、 执行安装命令
 在该文件夹下，**以管理员权限打开 PowerShell**，直接依次粘贴执行以下命令：
 ```PowerShell
+# 1. 安装底层依赖框架
 Add-AppxPackage -Path "./Microsoft.UI.Xaml.2.8.appx"
 Add-AppxPackage -Path "./Microsoft.VCLibs.140.00.UWPDesktop_14.0.33728.0_x64.appx"
+# 2. 安装 Windows App Runtime 1.8
 .\WindowsAppRuntimeInstall-x64.exe
+# 3. 安装 VCLibs 主框架
 Add-AppxPackage -Path "./Microsoft.VCLibs.140.00_14.0.33519.0_x64.appx"
+# 4. 安装 winget 主程序
 Add-AppxPackage -Path "./Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle"
+# 5. 配置系统级许可证（解决 LTSC 无法运行应用问题）
 Add-AppxProvisionedPackage -Online -PackagePath "./Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle"  -LicensePath "./e53e159d00e04f729cc2180cffd1c02e_License1.xml"
 ```
 ### 三、 验证
