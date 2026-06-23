@@ -63,12 +63,12 @@ Add-AppxProvisionedPackage -Online -PackagePath "./Microsoft.DesktopAppInstaller
    - 文件：
      - `Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle`
      - `e53e159d00e04f729cc2180cffd1c02e_License1.xml`
-1. **UI.Xaml 2.8 框架**
+2. **UI.Xaml 2.8 框架**
    - 来源：[NuGet](https://www.nuget.org/packages/Microsoft.UI.Xaml/) 下载 `.nupkg` 后改扩展名为 `.zip`，解压取出 `tools\AppX\x64\Release\` 目录下的文件。
    - 文件：`Microsoft.UI.Xaml.2.8.appx`
    - 直链：
        - https://www.nuget.org/api/v2/package/Microsoft.UI.Xaml/2.8.7
-1. **VCLibs 框架 (x64)**
+3. **VCLibs 框架 (x64)**
    - 直链：
      - https://github.com/harryeffinpotter/PC-Gaming-Redists/raw/main/Microsoft.VCLibs.140.00_14.0.33519.0_x64.appx
      - https://github.com/harryeffinpotter/PC-Gaming-Redists/raw/main/Microsoft.VCLibs.140.00.UWPDesktop_14.0.33728.0_x64.appx
@@ -76,6 +76,7 @@ Add-AppxProvisionedPackage -Online -PackagePath "./Microsoft.DesktopAppInstaller
      - `Microsoft.VCLibs.140.00_14.0.33519.0_x64.appx`
      - `Microsoft.VCLibs.140.00.UWPDesktop_14.0.33728.0_x64.appx`
 4. **Windows App Runtime 1.8**
+  -    
    - 直链：https://aka.ms/windowsappsdk/1.8/1.8.260529003/windowsappruntimeinstall-x64.exe
    - 文件：`WindowsAppRuntimeInstall-x64.exe`
 ### 二、 执行安装命令
