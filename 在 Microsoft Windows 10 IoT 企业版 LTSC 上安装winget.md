@@ -7,7 +7,7 @@
 ### 一、 文件准备
 
 1. **winget 主程序及许可证**
-   - 来源：[GitHub Release](https://github.com/microsoft/winget-cli/releases/)
+   - 来源：[microsoft/winget-cli](https://github.com/microsoft/winget-cli)
    - 文件：
      - `Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle`
      - `e53e159d00e04f729cc2180cffd1c02e_License1.xml`
@@ -18,16 +18,12 @@
        - https://www.nuget.org/api/v2/package/Microsoft.UI.Xaml/2.8.7
 3. **VCLibs 框架 (x64)**
    - 直链：
-     - https://github.com/czvv/LTSC-Add-MicrosoftStore-2025/blob/main/Microsoft.VCLibs.140.00_14.0.33519.0_x64__8wekyb3d8bbwe.Appx
-     - https://github.com/czvv/LTSC-Add-MicrosoftStore-2025/blob/main/Microsoft.VCLibs.140.00.UWPDesktop_14.0.33728.0_x64__8wekyb3d8bbwe.Appx
-   - 文件：
-     - `Microsoft.VCLibs.140.00_14.0.33519.0_x64__8wekyb3d8bbwe.Appx`
-     - `Microsoft.VCLibs.140.00.UWPDesktop_14.0.33728.0_x64__8wekyb3d8bbwe.Appx`
+     - [Microsoft.VCLibs.140.00_14.0.33519.0_x64__8wekyb3d8bbwe.Appx](https://github.com/czvv/LTSC-Add-MicrosoftStore-2025/blob/main/Microsoft.VCLibs.140.00_14.0.33519.0_x64__8wekyb3d8bbwe.Appx)
+     - [Microsoft.VCLibs.140.00.UWPDesktop_14.0.33728.0_x64__8wekyb3d8bbwe.Appx](https://github.com/czvv/LTSC-Add-MicrosoftStore-2025/blob/main/Microsoft.VCLibs.140.00.UWPDesktop_14.0.33728.0_x64__8wekyb3d8bbwe.Appx)
 1. **Windows App Runtime 1.8**
    - 来源：[Windows 应用 SDK 早期版本下载 - Windows apps | Microsoft Learn](https://learn.microsoft.com/zh-cn/windows/apps/windows-app-sdk/downloads-archive)  获取版本 **1.8.9 (1.8.260529003)**
    - 直链：
-       - https://aka.ms/windowsappsdk/1.8/1.8.260529003/windowsappruntimeinstall-x64.exe
-   - 文件：`WindowsAppRuntimeInstall-x64.exe`
+       - [WindowsAppRuntimeInstall-x64.exe](https://aka.ms/windowsappsdk/1.8/1.8.260529003/windowsappruntimeinstall-x64.exe)
 
 ### 二、 执行安装命令
 
