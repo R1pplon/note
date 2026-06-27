@@ -1,5 +1,3 @@
-
-
 ## 资源调度
 
 ### 标签和选择器：Label与Selector的使用
@@ -58,7 +56,7 @@ kubectl get po -l version!=1,app=nginx
 kubectl get po -A -l version!=1,'app in (busybox, nginx)'
 ```
 
-## Deployment
+### Deployment
 
 配置文件
 
@@ -94,7 +92,7 @@ spec:
       terminationGracePeriodSeconds: 30 # 删除操作最多宽限多长时间
 ```
 
-### 创建
+#### 创建
 
 ```bash
 # 创建一个 deployment  
@@ -114,7 +112,7 @@ kubectl get rs
 kubectl get pods --show-labels
 ```
 
-### 扩容缩容
+#### 扩容缩容
 
 实现扩容/缩容
 
@@ -127,7 +125,7 @@ kube edit deploy nginx-deploy
 
 扩容与缩容只是直接创建副本数，没有更新 pod template 因此不会创建新的 rs
 
-### 滚动更新
+#### 滚动更新
 
 只有修改了 deployment 配置文件中的 template 中的属性后，才会触发更新操作  
 
@@ -154,7 +152,7 @@ kubectl get rs
 kubectl get pods
 ```
 
-### 回滚
+#### 回滚
 
 默认情况下，kubernetes会在系统中保存前两次的Deployment的rollout历史记录
 
@@ -218,7 +216,7 @@ kubectl describe deployment
 通过设置 `.spec.revisonHistoryLimit` 来指定 deployment 保留多少 revison
 如果设置为 0，则不允许 deployment 回退
 
-### 暂停与恢复
+#### 暂停与恢复
 
 ```bash
 # 暂停更新
@@ -229,3 +227,5 @@ kubectl rollout pause deployment <name>
 # 恢复更新
 kubectl rollout resume deployment <name>
 ```
+
+### StatefulSet
