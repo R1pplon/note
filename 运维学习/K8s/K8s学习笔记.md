@@ -117,7 +117,7 @@ kubectl get pods --show-labels
 实现扩容/缩容
 
 ```bash
-kubectl scale --replicas=6 deploy nginx-deploy
+kubectl scale deploy nginx-deploy --replicas=6
 
 # 编辑 replcas
 kube edit deploy nginx-deploy
