@@ -90,7 +90,7 @@ wsl --update
 
 ```PowerShell
 # 官方推荐的查看方式
-wsl --list --online 
+wsl --list --online
 # 简写
 wsl -l -o
 ```
